@@ -1,8 +1,6 @@
-# CentOS - Base PHP
+# Base PHP
 
-> This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. Based on CentOS 7 and CentOS 8, this image is meant to be minimal and aims to support the needs of a WordPress site. 
-
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![MIT License](https://img.shields.io/github/license/10up/base-php.svg)](https://github.com/10up/base-php/blob/master/LICENSE)
+This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. Based on Ubuntu 20.04, this image is meant to be minimal and aims to support the needs of a WordPress ecosystem. The images are offered in both x86_64 and arm64.
 
 ## Usage
 
@@ -10,7 +8,7 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-This project takes advantage of custom build phase hooks as described at https://docs.docker.com/docker-hub/builds/advanced/. When setting up builds on docker hub create automated builds with rules to build for the master branch for each PHP version you want built. Currently this image is built with 5.6, 7.0, 7.1, 7.2, 7.3 and 7.4.
+This project takes advantage of custom build phase hooks as described at https://docs.docker.com/docker-hub/builds/advanced/. When setting up builds on docker hub create automated builds with rules to build for the main branch for each PHP version you want built. Currently this image is built with 5.6, 7.0, 7.1, 7.2, 7.3, 7.4 and 8.0.
 
 ## Support Level
 
