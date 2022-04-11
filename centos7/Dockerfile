@@ -26,6 +26,7 @@ RUN yum install -y --enablerepo=remi-php${PHP_VERSION} \
   php-soap \
   php-zip \
   php-intl \
+  php-pcov \
   ImageMagick \
   php-pecl-imagick && yum clean all
 
