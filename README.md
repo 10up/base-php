@@ -20,7 +20,6 @@ There are currently a number of images being built for the different operating s
   * 10up/base-php:7.4
   * 10up/base-php:8.0
 * Ubuntu 22.04 based
-  * 10up/base-php:5.6-ubuntu
   * 10up/base-php:7.0-ubuntu
   * 10up/base-php:7.1-ubuntu
   * 10up/base-php:7.2-ubuntu
