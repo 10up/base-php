@@ -36,6 +36,7 @@ RUN \
   php${PHP_VERSION}-zip \
   php${PHP_VERSION}-intl \
   php${PHP_VERSION}-imagick \
+  php${PHP_VERSION}-pcov \
   imagemagick && apt-get clean
     
 USER www-data
