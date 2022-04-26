@@ -9,12 +9,14 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN \
   apt-get update && \
   apt-get dist-upgrade -y && \
-  apt-get install gnupg -y && \
+  apt-get install gnupg ca-certificates -y && \
   apt-get clean
 
 RUN \
-  echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu jammy main" | tee /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list && \
-  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C && \
+  echo "deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main" | tee /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list && \
+  mkdir ~/.gnupg && chmod 0700 $_ && \
+  gpg --no-default-keyring --keyring /usr/share/keyrings/ondrej-ubuntu-php.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C && \
+  sed -i 's/deb /deb \[signed\-by=\/usr\/share\/keyrings\/ondrej-ubuntu-php.gpg\] /' /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list && \
   apt-get update && \
   apt-get clean 
 
