@@ -10,7 +10,7 @@ RUN \
   apt-get update && \
   apt-get dist-upgrade -y && \
   apt-get install gnupg ca-certificates -y && \
-  apt-get clean
+  rm -rf /var/lib/apt/lists/*
 
 RUN \
   echo "deb https://ppa.launchpadcontent.net/ondrej/php/ubuntu/ jammy main" | tee /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list && \
@@ -18,10 +18,10 @@ RUN \
   gpg --no-default-keyring --keyring /usr/share/keyrings/ondrej-ubuntu-php.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 14AA40EC0831756756D7F66C4F4EA0AAE5267A6C && \
   sed -i 's/deb /deb \[signed\-by=\/usr\/share\/keyrings\/ondrej-ubuntu-php.gpg\] /' /etc/apt/sources.list.d/ondrej-ubuntu-php-jammy.list && \
   apt-get update && \
-  apt-get clean 
+  rm -rf /var/lib/apt/lists/*
 
 RUN \
-  apt-get install -y \
+  apt-get update && apt-get install -y \
   php${PHP_VERSION}-curl \
   php${PHP_VERSION}-xml \
   php${PHP_VERSION}-xmlrpc \
@@ -38,7 +38,8 @@ RUN \
   php${PHP_VERSION}-zip \
   php${PHP_VERSION}-intl \
   php${PHP_VERSION}-imagick \
-  imagemagick && apt-get clean
+  imagemagick && \
+  rm -rf /var/lib/apt/lists/*
     
 USER www-data
 
