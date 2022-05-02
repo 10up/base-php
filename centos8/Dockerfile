@@ -27,6 +27,7 @@ RUN yum install -y \
   php-zip \
   php-intl \
   ImageMagick \
+  findutils \
   php-pecl-imagick && yum clean all
 
 RUN useradd -u 33 -g 33 www-data
