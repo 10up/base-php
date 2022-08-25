@@ -32,6 +32,9 @@ RUN yum install -y \
 
 RUN useradd -u 33 -g 33 www-data
 
+# On centos ownership is root:apache
+RUN chgrp 33 /var/lib/php/session
+
 USER www-data
 
 CMD ["php"]
