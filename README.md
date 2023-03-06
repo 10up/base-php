@@ -8,17 +8,17 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-There are currently a number of images being built for the different operating systems. This image is built with support for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. Note that we do not build CentOS/Rocky Linux based images beyond 8.0 and they will be removed in the future. Images are available under the tags:
+There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. Note that we do not build CentOS/Rocky Linux based images beyond 8.0 and they will be removed in the future. Images are available under the tags:
 
 * CentOS 7 based
-  * 10up/base-php:5.6
-  * 10up/base-php:7.0
-  * 10up/base-php:7.1
+  * 10up/base-php:5.6 (Deprecated, no longer refreshed)
+  * 10up/base-php:7.0 (Deprecated)
+  * 10up/base-php:7.1 (Deprecated)
 * Rocky Linux 8 based
-  * 10up/base-php:7.2
-  * 10up/base-php:7.3
-  * 10up/base-php:7.4
-  * 10up/base-php:8.0
+  * 10up/base-php:7.2 (Deprecated)
+  * 10up/base-php:7.3 (Deprecated)
+  * 10up/base-php:7.4 (Deprecated)
+  * 10up/base-php:8.0 (Deprecated)
 * Ubuntu 22.04 based
   * 10up/base-php:7.0-ubuntu
   * 10up/base-php:7.1-ubuntu
