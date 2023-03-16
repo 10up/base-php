@@ -25,7 +25,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ secrets.IMAGE_NAME }}:${{ matrix.version }}-ubuntu
+            docker.io/${{ secrets.IMAGE_NAME }}:${{ matrix.version }}-ubuntu
             ghcr.io/${{ github.repository }}:${{ matrix.version }}-ubuntu
 
       - name: Build and push Docker images
@@ -34,7 +34,6 @@ jobs:
           push: false
           platforms: linux/amd64,linux/arm64
           build-args: PHP_VERSION=${{ matrix.version }}
-          tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
 
