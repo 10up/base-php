@@ -8,7 +8,11 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. Note that we do not build CentOS/Rocky Linux based images beyond 8.0 and they will be removed in the future. Images are available under the tags:
+There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. Note that we do not build CentOS/Rocky Linux based images beyond 8.0 and they will be removed in the future. 
+
+Also note that CentOS/RL based images are not being pushed to ghcr.io!
+
+Images are available under the tags:
 
 * CentOS 7 based
   * 10up/base-php:5.6 (Deprecated, no longer refreshed)
@@ -19,7 +23,7 @@ There are currently a number of images being built for the different operating s
   * 10up/base-php:7.3 (Deprecated)
   * 10up/base-php:7.4 (Deprecated)
   * 10up/base-php:8.0 (Deprecated)
-* Ubuntu 22.04 based
+* Ubuntu 22.04 based (Docker Hub)
   * 10up/base-php:7.0-ubuntu
   * 10up/base-php:7.1-ubuntu
   * 10up/base-php:7.2-ubuntu
@@ -28,6 +32,15 @@ There are currently a number of images being built for the different operating s
   * 10up/base-php:8.0-ubuntu
   * 10up/base-php:8.1-ubuntu
   * 10up/base-php:8.2-ubuntu
+* Ubuntu 22.04 based (Github Packages)
+  * ghcr.io/10up/base-php:7.0-ubuntu
+  * ghcr.io/10up/base-php:7.1-ubuntu
+  * ghcr.io/10up/base-php:7.2-ubuntu
+  * ghcr.io/10up/base-php:7.3-ubuntu
+  * ghcr.io/10up/base-php:7.4-ubuntu
+  * ghcr.io/10up/base-php:8.0-ubuntu
+  * ghcr.io/10up/base-php:8.1-ubuntu
+  * ghcr.io/10up/base-php:8.2-ubuntu
 
 ## Support Level
 
