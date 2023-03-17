@@ -25,8 +25,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           tags: |
-            type=semver,pattern={{version}},value=${{ matrix.version }}-ubuntu
-            type=semver,pattern={{version}},value=${{ matrix.version }}-ubuntu
+            type=raw,pattern={{version}},value=${{ matrix.version }}-ubuntu
           images: |
             ${{ secrets.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
