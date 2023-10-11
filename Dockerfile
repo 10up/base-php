@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ARG PHP_VERSION=7.3
+ARG PHP_VERSION=8.2
 
 SHELL ["/bin/bash", "-c"]
 
