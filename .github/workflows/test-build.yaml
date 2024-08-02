@@ -21,25 +21,28 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Extract metadata (tags, labels) for Docker (Jammy)
+        if: matrix.ubuntu-release-name == 'jammy'
         id: meta
         uses: docker/metadata-action@v4
         with:
           tags: |
-            type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
-            type=raw,pattern={{version}},value=${{ matrix.version }}-ubuntu
+              type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
+              type=raw,pattern={{version}},value=${{ matrix.version }}-ubuntu
           images: |
             ${{ secrets.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
 
-      - name: Set tags
-        id: set-tags
-        run: |
-          if [[ "${{ matrix.ubuntu-release-name }}" == "jammy" ]]; then
-            echo "TAGS=${{ steps.meta.outputs.tags }},${{ matrix.version }}-ubuntu" >> $GITHUB_ENV
-          else
-            echo "TAGS=${{ steps.meta.outputs.tags }}" >> $GITHUB_ENV
-          fi
+      - name: Extract metadata (tags, labels) for Docker (Others)
+        if: matrix.ubuntu-release-name != 'jammy'
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          tags: |
+              type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
+          images: |
+            ${{ secrets.IMAGE_NAME }}
+            ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
