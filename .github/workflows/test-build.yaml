@@ -27,9 +27,19 @@ jobs:
         with:
           tags: |
             type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
+            type=raw,pattern={{version}},value=${{ matrix.version }}-ubuntu
           images: |
             ${{ secrets.IMAGE_NAME }}
             ghcr.io/${{ github.repository }}
+
+      - name: Set tags
+        id: set-tags
+        run: |
+          if [[ "${{ matrix.ubuntu-release-name }}" == "jammy" ]]; then
+            echo "tags=${{ steps.meta.outputs.tags }} ${{ matrix.version }}-ubuntu" >> $GITHUB_ENV
+          else
+            echo "tags=${{ steps.meta.outputs.tags }}" >> $GITHUB_ENV
+          fi
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v4
@@ -39,7 +49,7 @@ jobs:
           build-args: |
             PHP_VERSION=${{ matrix.version }}
             UBUNTU_RELEASE_NAME=${{ matrix.ubuntu-release-name }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ env.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
 
