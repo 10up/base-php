@@ -36,9 +36,9 @@ jobs:
         id: set-tags
         run: |
           if [[ "${{ matrix.ubuntu-release-name }}" == "jammy" ]]; then
-            echo "tags=${{ steps.meta.outputs.tags }} ${{ matrix.version }}-ubuntu" >> $GITHUB_ENV
+            echo "TAGS=${{ steps.meta.outputs.tags }},${{ matrix.version }}-ubuntu" >> $GITHUB_ENV
           else
-            echo "tags=${{ steps.meta.outputs.tags }}" >> $GITHUB_ENV
+            echo "TAGS=${{ steps.meta.outputs.tags }}" >> $GITHUB_ENV
           fi
 
       - name: Build and push Docker images
