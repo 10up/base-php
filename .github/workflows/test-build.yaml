@@ -16,20 +16,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Extract metadata (tags, labels) for Docker (Jammy)
         if: matrix.ubuntu-release-name == 'jammy'
         id: meta-jammy
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           tags: |
               type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
@@ -41,7 +41,7 @@ jobs:
       - name: Extract metadata (tags, labels) for Docker (Others)
         if: matrix.ubuntu-release-name != 'jammy'
         id: meta-others
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           tags: |
               type=raw,pattern={{version}},value=${{ matrix.version }}-${{ matrix.ubuntu-release-name }}
@@ -51,7 +51,7 @@ jobs:
 
       - name: Build and push Docker images (Jammy)
         if: matrix.ubuntu-release-name == 'jammy'
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           push: false
           platforms: linux/amd64,linux/arm64
@@ -63,7 +63,7 @@ jobs:
 
       - name: Build and push Docker images (Others)
         if: matrix.ubuntu-release-name != 'jammy'
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           push: false
           platforms: linux/amd64,linux/arm64
@@ -83,18 +83,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
       - name: Build and push CentOS based Docker images
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           push: false
           context: centos8
