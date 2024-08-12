@@ -1,6 +1,6 @@
 # Base PHP
 
-This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. The images are created from a number of base operating systems including CentOS 7, Rocky Linux 8 and Ubuntu. The non-Ubuntu based images are now deprecated and will be replaced with Ubuntu based images over time. This image is meant to be minimal and aims to support the needs of a WordPress ecosystem. The images are offered in both x86_64 and arm64 architectures.
+This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. The images are created from a number of base operating systems including CentOS 7, Rocky Linux 8 and Ubuntu 22.04 and 24.04. The non-Ubuntu based images are now deprecated and will be replaced with Ubuntu based images over time. This image is meant to be minimal and aims to support the needs of a WordPress ecosystem. The images are offered in both x86_64 and arm64 architectures.
 
 ## Usage
 
@@ -8,7 +8,7 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1 and 8.2. Note that we do not build CentOS/Rocky Linux based images beyond 8.0 and they will be removed in the future. 
+There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2 and 8.3. Note that we do not build CentOS/Rocky Linux based images beyond 8.1 and they will be removed in the future. 
 
 Also note that CentOS/RL based images are not being pushed to ghcr.io!
 
@@ -23,6 +23,7 @@ Images are available under the tags:
   * 10up/base-php:7.3 (Deprecated)
   * 10up/base-php:7.4 (Deprecated)
   * 10up/base-php:8.0 (Deprecated)
+  * 10up/base-php:8.1 (Deprecated)
 * Ubuntu 22.04 based (Docker Hub)
   * 10up/base-php:7.0-ubuntu
   * 10up/base-php:7.1-ubuntu
@@ -32,6 +33,7 @@ Images are available under the tags:
   * 10up/base-php:8.0-ubuntu
   * 10up/base-php:8.1-ubuntu
   * 10up/base-php:8.2-ubuntu
+  * 10up/base-php:8.3-ubuntu
 * Ubuntu 22.04 based (Github Packages)
   * ghcr.io/10up/base-php:7.0-ubuntu
   * ghcr.io/10up/base-php:7.1-ubuntu
@@ -41,6 +43,27 @@ Images are available under the tags:
   * ghcr.io/10up/base-php:8.0-ubuntu
   * ghcr.io/10up/base-php:8.1-ubuntu
   * ghcr.io/10up/base-php:8.2-ubuntu
+  * ghcr.io/10up/base-php:8.3-ubuntu
+* Ubuntu 24.04 based (Docker Hub)
+  * 10up/base-php:7.0-noble
+  * 10up/base-php:7.1-noble
+  * 10up/base-php:7.2-noble
+  * 10up/base-php:7.3-noble
+  * 10up/base-php:7.4-noble
+  * 10up/base-php:8.0-noble
+  * 10up/base-php:8.1-noble
+  * 10up/base-php:8.2-noble
+  * 10up/base-php:8.3-noble
+* Ubuntu 24.04 based (Github Packages)
+  * ghcr.io/10up/base-php:7.0-noble
+  * ghcr.io/10up/base-php:7.1-noble
+  * ghcr.io/10up/base-php:7.2-noble
+  * ghcr.io/10up/base-php:7.3-noble
+  * ghcr.io/10up/base-php:7.4-noble
+  * ghcr.io/10up/base-php:8.0-noble
+  * ghcr.io/10up/base-php:8.1-noble
+  * ghcr.io/10up/base-php:8.2-noble
+  * ghcr.io/10up/base-php:8.3-noble
 
 ## Support Level
 
