@@ -8,7 +8,7 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2 and 8.3. Note that we do not build CentOS/Rocky Linux based images beyond 8.1 and they will be removed in the future. 
+There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3 and 8.4. Note that we do not build CentOS/Rocky Linux based images beyond 8.1 and they will be removed in the future. 
 
 Also note that CentOS/RL based images are not being pushed to ghcr.io!
 
@@ -34,6 +34,7 @@ Images are available under the tags:
   * 10up/base-php:8.1-ubuntu
   * 10up/base-php:8.2-ubuntu
   * 10up/base-php:8.3-ubuntu
+  * 10up/base-php:8.4-ubuntu
 * Ubuntu 22.04 based (Github Packages)
   * ghcr.io/10up/base-php:7.0-ubuntu
   * ghcr.io/10up/base-php:7.1-ubuntu
@@ -44,6 +45,7 @@ Images are available under the tags:
   * ghcr.io/10up/base-php:8.1-ubuntu
   * ghcr.io/10up/base-php:8.2-ubuntu
   * ghcr.io/10up/base-php:8.3-ubuntu
+  * ghcr.io/10up/base-php:8.4-ubuntu
 * Ubuntu 24.04 based (Docker Hub)
   * 10up/base-php:7.0-noble
   * 10up/base-php:7.1-noble
@@ -54,6 +56,7 @@ Images are available under the tags:
   * 10up/base-php:8.1-noble
   * 10up/base-php:8.2-noble
   * 10up/base-php:8.3-noble
+  * 10up/base-php:8.4-noble
 * Ubuntu 24.04 based (Github Packages)
   * ghcr.io/10up/base-php:7.0-noble
   * ghcr.io/10up/base-php:7.1-noble
@@ -64,6 +67,7 @@ Images are available under the tags:
   * ghcr.io/10up/base-php:8.1-noble
   * ghcr.io/10up/base-php:8.2-noble
   * ghcr.io/10up/base-php:8.3-noble
+  * ghcr.io/10up/base-php:8.4-noble
 
 ## Support Level
 
