@@ -1,6 +1,6 @@
 # Base PHP
 
-This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. The images are created from a number of base operating systems including CentOS 7, Rocky Linux 8 and Ubuntu 22.04 and 24.04. The non-Ubuntu based images are now deprecated and will be replaced with Ubuntu based images over time. This image is meant to be minimal and aims to support the needs of a WordPress ecosystem. The images are offered in both x86_64 and arm64 architectures.
+This image is the parent for a number of downstream images that make use of PHP either as a commandline tool or for php-fpm. The images are created from a number of base operating systems including Rocky Linux 8 and Ubuntu 22.04 and 24.04. The non-Ubuntu based images are now deprecated and will be replaced with Ubuntu based images over time. This image is meant to be minimal and aims to support the needs of a WordPress ecosystem. The images are offered in both x86_64 and arm64 architectures.
 
 ## Usage
 
@@ -8,7 +8,7 @@ This image, by itself, is not particularly useful. When run it passes arguments 
 
 ## Building
 
-There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3 and 8.4. Note that we do not build CentOS/Rocky Linux based images beyond 8.1 and they will be removed in the future. 
+There are currently a number of images being built for the different operating systems. This image is built with support for PHP 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3 and 8.4. Note that we do not build Rocky Linux based images beyond 8.1 and they will be removed in the future. 
 
 Also note that CentOS/RL based images are not being pushed to ghcr.io!
 
